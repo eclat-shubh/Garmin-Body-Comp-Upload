@@ -1,0 +1,4 @@
+Type,Local Number,Message,Field 1,Field 2,Field 3,Field 4,Field 5,Field 6,Field 7,Field 8,Field 9
+Definition,0,weight_scale,timestamp,weight,percent_fat,percent_hydration,visceral_fat_rating,bone_mass,muscle_mass,bmi,metabolic_age
+Data,0,1104662131,71.35,13.5,62.5,6,3.07,58.65,22.5,31
+Data,0,1104680238,70.9,13.3,62.6,5,3.05,58.42,22.4,31
