@@ -34,7 +34,12 @@ This work is an expansion of the foundational guide created by [SAShood on Reddi
 ### Step 2: Add Your Data
 1.  Open the **"Your_Data_Import"** sheet (the 2nd tab).
 2.  Export your data from your scale's app (e.g., Renpho) and paste it into this sheet.
-3.  **Crucial:** The "Garmin Timestamp" column (Column A) has a formula to convert your date/time. Make sure to copy this formula down for all your rows. (formula if you downloaded the local file: =INT((VALUE(SUBSTITUTE(SUBSTITUTE(A2, " at ", " "), CHAR(8239), " ")) - 32874) * 86400))
+3.  **Crucial:** The "Garmin Timestamp" column (Column A) has a formula to convert your date/time. Make sure to copy this formula down for all your rows. (formula if you downloaded the local file: =INT((VALUE(SUBSTITUTE(SUBSTITUTE(A2, " at ", " "), CHAR(8239), " ")) - 32874) * 86400)).
+**Please note: ** 
+This formula takes into account Garmin's epoch and the default timezone is UTC. If your timezone is different from UTC, you'll need to edit the formula to factor that in for example if you are in New York EST, UTC-5, you will need to add 5 hours so the formula becomes:
+=INT((VALUE(SUBSTITUTE(SUBSTITUTE(A2, " at ", " "), CHAR(8239), " ")) + (5/24) - 32874) * 86400)
+If you are ahead of UTC then you'll need to subtract your timezone from the formula, example for Berlin, UTC+1, the formula becoomes:
+=INT((VALUE(SUBSTITUTE(SUBSTITUTE(A2, " at ", " "), CHAR(8239), " ")) - (1/24) - 32874) * 86400)
 
 ### Step 3: Prepare the Garmin Template
 1.  Click on the **"GARMIN_CSV_TEMPLATE"** sheet (the 1st tab).
